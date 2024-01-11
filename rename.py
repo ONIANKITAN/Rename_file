@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 import os
-
+from keep_alive import keep_alive
 # Créez une instance de client avec votre propre token de bot et votre nom d'utilisateur
 app = Client("my_account", bot_token="6863934525:AAHIQuoW7MbumOZzLz8MkK109DW2SLRdZAs", api_id="29022005", api_hash="bfd616932410d155a39403b4fac5884b")
 
@@ -24,4 +24,5 @@ async def rename_doc(client: Client, message: Message):
         os.remove(new_file_path)
 
 # Exécutez le client
+keep_alive()
 app.run()
